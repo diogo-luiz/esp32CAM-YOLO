@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Página Inicial{% endblock %}
+
+{% block content %}
+    <div class="wrapper">
+
+        <form action="/upload-image" method="post" enctype="multipart/form-data">
+            <h1>Enviar Imagem</h1>
+            <div class="input-box">
+                <input type="file" name="file" accept="image/*" id="uploadBtn">
+                <label for="uploadBtn">Selecionar</label>
+                <button class="uploadBtn" type="submit" >Upload</button>
+                <i class='bx bxs-cloud-upload'></i>
+            </div>
+        </form>
+
+
+        <form action="/redirect" method="post">
+            <h1>Redirecionar para ESP32</h1>
+            <div class="input-box">
+                <button class="btn" ="submit">Ir para Câmera</button>
+                <i class='bx bx-redo' ></i>
+            </div>
+        </form>
+
+        <form action="/capture" method="post">
+            <h1>Capturar foto com ESP32</h1>
+            <div class="input-box">
+                <button class="btn" type="submit">Capturar foto</button>
+                <i class='bx bxs-camera-plus' ></i>
+            </div>
+        </form>
+    </div>
+{% endblock %}
